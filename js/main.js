@@ -1,3 +1,5 @@
+$(function(){
+
 
 // board = [
 //   [null, null, 4, 6, null, 8, 9, 1, 2],
@@ -56,6 +58,7 @@ for (var i = 0; i < board.length; i++) {
   // }
 }
 
+//refactor and/or create for all columns
 //column1 check
 var column1 = [];
 for (var i = 0; i < board.length; i++) {
@@ -69,3 +72,46 @@ for (var i = 0; i < board.length; i++) {
   column2.push(board[i][1]); //returns first column into an array
 }
 console.log(eval(column2.join('+')));
+
+//3x3 check
+var firstBox = [];
+var secondBox = [];
+var thirdBox = []
+for (var i = 0; i < 3; i++) {
+  for (var j = 0; j < 3; j++) {
+    firstBox.push(board[i][j]);
+  }
+  for (var j = 3; j < 6; j++) {
+    secondBox.push(board[i][j]);
+  }
+  for (var j = 6; j < 9; j++) {
+    thirdBox.push(board[i][j]);
+  }
+}
+
+console.log(firstBox);
+console.log(eval(firstBox.join('+')));
+console.log(secondBox)
+console.log(eval(secondBox.join('+')));
+console.log(thirdBox)
+console.log(eval(thirdBox.join('+')));
+
+//drag 1-9 to board
+$('.number').draggable({helper:'clone'});
+$('.square').droppable(
+  {
+    accept:'.number',
+    drop: function(ev,ui) {
+      var droppedNumber = $(ui.draggable).clone();
+      this.innerText = 'works'
+      // board[0][0] = this.innerText
+    }
+  }
+
+)
+
+
+
+
+
+}) //end of jq
