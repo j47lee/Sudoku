@@ -57,14 +57,34 @@ board = [
 var squares = document.getElementsByClassName('square'); //generates array from divs
 for (var i = 0; i < board.length; i++) {
   for (var j = 0; j < board[i].length; j++) {
-    var squareNumber = j+(i*board[i].length)
-    squares[squareNumber].innerHTML = board[i][j];
+    var squareNumber = j+(i*board[i].length);
+    if(board[i][j]){
+      squares[squareNumber].innerHTML = board[i][j];
+    } else {
+      console.log('Square is 0. Do not fill')
+    }
   }
 }
 
 ////////////////////////////////DRAG AND DROP//////////////////////////////////
 //Initiates draggable numbers into each row
 $('.number').draggable({helper:'clone'});
+
+
+            for (var i = 0; i < board.length; i++) {
+              for (var j = 0; j < board[i].length; j++) {
+                if (board[i][j]<1) {
+                // console.log(board[i][j]);
+
+                } else {
+
+                }
+              }
+            }
+
+
+
+
 //for row1
 $('.row1').children('div').each(function() {
   $(this).droppable({          // "this" refers to the div
