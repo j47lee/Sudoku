@@ -97,18 +97,66 @@ console.log(thirdBox)
 console.log(eval(thirdBox.join('+')));
 
 //drag 1-9 to board
-$('.number').draggable({helper:'clone'});
-$('.square').droppable(
-  {
-    accept:'.number',
-    drop: function(ev,ui) {
-      var droppedNumber = $(ui.draggable).clone();
-      this.innerText = 'works'
-      // board[0][0] = this.innerText
-    }
-  }
 
-)
+
+// var squares = document.getElementsByClassName('square');  //grabs the divs, puts into array
+//
+// for (var i = 0; i < board.length; i++) {
+//   for (var j = 0; j < board[i].length; j++) {
+//     var squareNumber = j+(i*board[i].length)
+//     squares[squareNumber].innerHTML = board[i][j];
+//   }
+// }
+
+
+
+
+
+//MAKES NUMBERS DRAGGABLE
+$('.number').draggable({helper:'clone'});
+
+
+$('.number').draggable({helper:'clone'});
+$('.container').children('div').each(function () {
+  $(this).droppable({
+    drop: function(ev,ui){
+      var draggedNumber = $(ui.draggable).html();
+      $(this).html(draggedNumber);
+      board[0][0] = parseInt(this.innerHTML);
+      console.log(board[0]);
+    }
+  })
+});
+
+
+
+//drop to change square 1/81
+// $('#sq1').droppable({
+//   drop: function(ev,ui){
+//     var draggedNumber = $(ui.draggable).html();
+//     $(this).html(draggedNumber);
+//     board[0][0] = parseInt(this.innerHTML);
+//     console.log(board[0]);
+//   }
+// })
+//
+// $('#sq2').droppable({
+//   drop: function(ev,ui){
+//     var draggedNumber = $(ui.draggable).html();
+//     $(this).html(draggedNumber);
+//     board[0][1] = parseInt(this.innerHTML);
+//     console.log(board[0]);
+//   }
+// })
+//
+// $('#sq3').droppable({
+//   drop: function(ev,ui){
+//     var draggedNumber = $(ui.draggable).html();
+//     $(this).html(draggedNumber);
+//     board[0][2] = parseInt(this.innerHTML);
+//     console.log(board[0]);
+//   }
+// })
 
 
 
