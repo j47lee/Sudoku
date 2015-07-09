@@ -36,7 +36,7 @@ board = [
 [4, 2, 6, 8, 5, 3, 7, 9, 1],
 [7, 1, 3, 9, 2, 4, 8, 5, 6],
 [9, 6, 1, 5, 3, 7, 2, 8, 4],
-[2, 8, 7, 4, 1, 9, 6, 3, 5],
+[2, 8, 7, 4, 1, 9, 6, 3, 20],
 [3, 4, 5, 2, 8, 6, 1, 7, 9]
 ]
 
@@ -51,7 +51,7 @@ for (var i = 0; i < board.length; i++) {
 }
 
 ////////////////////////////////DRAG AND DROP//////////////////////////////////
-//initiates draggable numbers
+//Initiates draggable numbers into each row
 $('.number').draggable({helper:'clone'});
 //for row1
 $('.row1').children('div').each(function() {
@@ -187,22 +187,19 @@ $('.row9').children('div').each(function() {
     }
   })
 });
-///////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////ROWS CHECK////////////////////////////////
-//rows check (create button to be clicked to check if solved)
 for (var i = 0; i < board.length; i++) {
-  var sumRow = eval(board[i].join('+'));
-  // console.log(sumRow);
-  // if (sumRow === 45) {
-  //   console.log('true');
-  // } else {
-  //   console.log('false');
-  // }
+  var sumCurrentRow = eval(board[i].join('+'));
+  // console.log(sumCurrentRow);
+  if (sumCurrentRow === 45) {
+    // console.log(true);
+  } else {
+    // console.log(false);
+    //////write function to return true or false
+    break;
+  }
 }
-//////////need to finish rest of rows////////////////////////
-
-
 
 //////////////////////////////////COLUMN CHECK////////////////////////////////
 //column1 check
@@ -266,24 +263,20 @@ for (var i = 6; i < 9; i++) {
   }
 }
 
-var e1 = eval(firstBox.join('+')); var e2 = eval(secondBox.join('+')); var e3 = eval(thirdBox.join('+'));
-var e4 = eval(fourthBox.join('+')); var e5 = eval(fifthBox.join('+')); var e6 = eval(sixthBox.join('+'));
-var e7 = eval(seventhBox.join('+')); var e8 = eval(eighthBox.join('+')); var e9 = eval(ninthBox.join('+'));
+var eb1 = eval(firstBox.join('+')); var eb2 = eval(secondBox.join('+')); var eb3 = eval(thirdBox.join('+'));
+var eb4 = eval(fourthBox.join('+')); var eb5 = eval(fifthBox.join('+')); var eb6 = eval(sixthBox.join('+'));
+var eb7 = eval(seventhBox.join('+')); var eb8 = eval(eighthBox.join('+')); var eb9 = eval(ninthBox.join('+'));
 
-if (e1==e2 && e2==e3 && e3==e4 && e4==e5 && e5==e6 && e6==e7 && e7==e8 && e8==e9 && e9 == 45) {
-  console.log(true);
+if (eb1===eb2 && eb2===eb3 && eb3===eb4 && eb4===eb5 && eb5===eb6 && eb6===eb7 && eb7===eb8 && eb8===eb9 && eb9===45) {
+  console.log('All 3x3s are ' + true);
 } else {
-  console.log(false);
+  console.log('Not all 3x3s are true. It is ' + false);
 }
 
-// console.log(firstBox);
-// console.log(eval(firstBox.join('+')));
-// console.log(secondBox)
-// console.log(eval(secondBox.join('+')));
-// console.log(thirdBox)
-// console.log(eval(thirdBox.join('+')));
-// console.log(fourthBox)
-// console.log(eval(fourthBox.join('+')));
+////////////BUTTON TO CHECK FOR ROWS, COLUMNS, 3X3///////////////////
+$('#check').click(function(){
+  alert('clicked');
+});
 
 
 console.log("----------");
@@ -297,7 +290,6 @@ console.log(board[6]);
 console.log(board[7]);
 console.log(board[8]);
 console.log("----------");
-
 
 
 
