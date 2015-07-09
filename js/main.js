@@ -116,18 +116,47 @@ console.log(eval(thirdBox.join('+')));
 $('.number').draggable({helper:'clone'});
 
 
-$('.number').draggable({helper:'clone'});
-$('.container').children('div').each(function () {
-  $(this).droppable({
+//for row1 only
+$('.row1').children('div').each(function() {
+  $(this).droppable({          // "this" refers to the div
     drop: function(ev,ui){
       var draggedNumber = $(ui.draggable).html();
       $(this).html(draggedNumber);
-      board[0][0] = parseInt(this.innerHTML);
-      console.log(board[0]);
+
+
+
+//good code, drag and drops properly. pushes to row1 correctly
+      for (var i = 0; i < 9; i++) {
+        if (parseInt(this.title) == i) {
+          board[0][i] = parseInt(this.innerHTML);
+        }
+      }
+
+
+      // if (this.id == 'sq1') {
+      //   board[0][0] = parseInt(this.innerHTML); //parseInt(this.innerHTML) gives us the number dragged 1-9
+      // } else if (this.id == 'sq2') {
+      //   board[0][1] = parseInt(this.innerHTML);
+      // } else if (this.id == 'sq3') {
+      //   board[0][2] = parseInt(this.innerHTML);
+      // } else if (this.id == 'sq4') {
+      //   board[0][3] = parseInt(this.innerHTML);
+      // } else if (this.id == 'sq5') {
+      //   board[0][4] = parseInt(this.innerHTML);
+      // } else if (this.id == 'sq6') {
+      //   board[0][5] = parseInt(this.innerHTML);
+      // } else if (this.id == 'sq7') {
+      //   board[0][6] = parseInt(this.innerHTML);
+      // } else if (this.id == 'sq8') {
+      //   board[0][7] = parseInt(this.innerHTML);
+      // } else if (this.id == 'sq9') {
+      //   board[0][8] = parseInt(this.innerHTML);
+      // }
+        console.log(board[0]);
+        console.log("----------");
     }
   })
 });
-
 
 
 //drop to change square 1/81
