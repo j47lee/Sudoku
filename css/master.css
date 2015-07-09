@@ -1,8 +1,13 @@
+body {
+  width: 900px;
+  margin: 0 auto; }
+
 h1 {
   color: red; }
 
 .container {
-  width: 950px; }
+  width: 650px;
+  background-color: yellow; }
   .container .square {
     width: 60px;
     height: 60px;
@@ -11,7 +16,7 @@ h1 {
     vertical-align: top;
     font-size: 30px; }
 
-.numbers div {
+.number {
   font-size: 30px;
   width: 60px;
   height: 60px;

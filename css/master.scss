@@ -1,9 +1,15 @@
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+
 h1 {
   color: red;
 }
 
 .container {
-  width: 950px;
+  width: 650px;
+  background-color: yellow;
   .square {
     width: 60px;
     height: 60px;
@@ -14,12 +20,10 @@ h1 {
   }
 }
 
-.numbers {
-  div {
-    font-size: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: red;
-    display: inline-block;
-  }
+.number {
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  display: inline-block;
 }
