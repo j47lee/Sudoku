@@ -35,8 +35,8 @@ p {
 
 .container {
   // background-color: pink;
-  margin: 0 auto;
   text-align: center;
+  margin: 0 auto;
   .square {
     width: 60px;
     height: 60px;
@@ -55,16 +55,13 @@ p {
   float: right;
   margin: 10px 0;
   text-align: right;
-}
-
-#timer, #score {
   font-size: 20px;
 }
 
 .buttons {
   // background-color: purple;
-  height: 130px;
   text-align: center;
+  height: 130px;
   div {
     width:300px;
     height:50px;
