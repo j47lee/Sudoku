@@ -1,6 +1,6 @@
 $(function(){
 
-board = [
+var board = [
   [0, 0, 4, 6, 0, 8, 9, 1, 2],
   [0, 7, 2, 0, 0, 0, 3, 4, 8],
   [1, 0, 0, 3, 4, 2, 5, 0, 7],
@@ -10,7 +10,7 @@ board = [
   [9, 0, 1, 5, 3, 7, 0, 0, 4],
   [2, 8, 7, 0, 0, 0, 6, 3, 0],
   [3, 4, 5, 2, 0, 6, 1, 0, 0],
-]
+];
 
 //SOLUTION
 // board = [
@@ -27,16 +27,34 @@ board = [
 
 ///////////////////////POPULATES HTML BOARD FROM ARRAY////////////////////
 var squares = document.getElementsByClassName('square'); //generates array from divs
-for (var i = 0; i < board.length; i++) {
-  for (var j = 0; j < board[i].length; j++) {
-    var squareNumber = j+(i*board[i].length);
-    if (board[i][j]) {
-      squares[squareNumber].innerHTML = board[i][j];
-    } else {
-      console.log('Square is 0. Do not fill')
+
+function setBoard(){
+  var boardReset = [
+    [0, 0, 4, 6, 0, 8, 9, 1, 2],
+    [0, 7, 2, 0, 0, 0, 3, 4, 8],
+    [1, 0, 0, 3, 4, 2, 5, 0, 7],
+    [0, 5, 9, 7, 0, 1, 4, 2, 0],
+    [0, 2, 6, 0, 5, 0, 7, 9, 0],
+    [0, 1, 3, 9, 2, 4, 8, 5, 0],
+    [9, 0, 1, 5, 3, 7, 0, 0, 4],
+    [2, 8, 7, 0, 0, 0, 6, 3, 0],
+    [3, 4, 5, 2, 0, 6, 1, 0, 0],
+  ];
+
+  for (var i = 0; i < boardReset.length; i++) {
+    for (var j = 0; j < boardReset[i].length; j++) {
+      var squareNumber = j+(i*boardReset[i].length);
+      if (boardReset[i][j]) {
+        squares[squareNumber].innerHTML = boardReset[i][j];
+      } else {
+        squares[squareNumber].innerHTML = '';
+        console.log('Square is 0. Do not fill')
+      }
     }
   }
 }
+
+setBoard();
 
 ////////////////////////////////DRAG AND DROP//////////////////////////////////
 //Initiates draggable numbers into each row
@@ -57,10 +75,9 @@ $('.row1').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
-
 
 //for row2
 $('.row2').children('div').each(function() {
@@ -77,7 +94,7 @@ $('.row2').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -96,7 +113,7 @@ $('.row3').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -115,7 +132,7 @@ $('.row4').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -134,7 +151,7 @@ $('.row5').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -153,7 +170,7 @@ $('.row6').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -172,7 +189,7 @@ $('.row7').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -191,7 +208,7 @@ $('.row8').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -210,7 +227,7 @@ $('.row9').children('div').each(function() {
       }
     })
   } else {
-    $(this).css('background-color','red')
+    $(this).css('color','red')
   }
 });
 
@@ -353,20 +370,10 @@ if (eb1===eb2 && eb2===eb3 && eb3===eb4 && eb4===eb5 && eb5===eb6 && eb6===eb7 &
   }
 });
 
-
-
-
-// console.log("----------");
-// console.log(board[0]);
-// console.log(board[1]);
-// console.log(board[2]);
-// console.log(board[3]);
-// console.log(board[4]);
-// console.log(board[5]);
-// console.log(board[6]);
-// console.log(board[7]);
-// console.log(board[8]);
-// console.log("----------");
+////////////////////////////////////////GAME RESET//////////////////////////////////////////
+$('#reset').click(function(){
+  setBoard();
+});
 
 
 
