@@ -363,18 +363,16 @@ if (eb1===eb2 && eb2===eb3 && eb3===eb4 && eb4===eb5 && eb5===eb6 && eb6===eb7 &
 
 //////////////////////////////////END OF BUTTON, SET ALERT/////////////////////////////////
   if (allRows45 && allCols45 && allBoxes45) {
-    alert('YOU WIN!!')
-    // $('#score').html($('#seconds').html()) ;
+    alert('You solved the puzzle!')
     $('#scoreSec').html($('#seconds').html());
     $('#scoreMin').html($('#minutes').html());
-
     sec = 0;
   } else {
-    alert('Sorry, Keep Trying')
+    alert('Sorry, keep trying.')
   }
 });
 
-////////////////////////////////////////GAME AND TIMER RESET//////////////////////////////////////////
+/////////////////////////////////////GAME AND TIMER RESET///////////////////////////////////////
 $('#reset').click(function(){
   setBoard();
   sec = 0;
@@ -388,15 +386,15 @@ setInterval( function(){
   $('#minutes').html(pad(parseInt(sec/60,10)));
 }, 1000);
 
-
+//////////////////////////CHECK AND RESET BUTTON ANIMATION///////////////////////////////
 
 $('#check').mouseover(function() {
-  $(this).animate({ backgroundColor: "black" }, 500); }).mouseout(function() {
-    $(this).animate({ backgroundColor: "#68BFEF" }, 200); })
+  $(this).animate({ backgroundColor: 'green', color: 'white' }, 500); }).mouseout(function() {
+    $(this).animate({ backgroundColor: 'white', color: 'green'}, 200); })
 
 $('#reset').mouseover(function() {
-  $(this).animate({ backgroundColor: "black" }, 500); }).mouseout(function() {
-    $(this).animate({ backgroundColor: "#68BFEF" }, 200); })
+  $(this).animate({ backgroundColor: 'red', color: 'white' }, 500); }).mouseout(function() {
+    $(this).animate({ backgroundColor: 'white', color: 'red' }, 200); })
 
 
 }) //end of jq
