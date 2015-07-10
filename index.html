@@ -7,7 +7,8 @@
     <!-- jquery using CDN -->
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
     <!--jQuery UI -->
     <link rel="stylesheet" href="js/jquery-ui-1.11.4.custom/jquery-ui.min.css">
@@ -21,11 +22,13 @@
   </head>
   <body>
 
+    <div id='time_score'>
+        <div id="timer">Elapsed Time: <span id="minutes">00</span>:<span id="seconds">00</span></div>
+        <div id="score">Time To Beat: <span id='scoreMin'>00</span>:<span id="scoreSec">00</span></div>
+    </div>
+
     <h1>Sudoku</h1>
 
-    <div id="timer">
-      <span id="minutes">00</span>:<span id="seconds">00</span>
-    </div>
 
     <div class="numbers">
       <div class='number' id='one'>1</div>
@@ -164,9 +167,12 @@
     </div>
 
     <div class="buttons">
-      <button id="check" type="button" name="button">CHECK</button>
-      <button id="reset" type="button" name="button">RESET</button>
+      <!-- <img id='check' src="images/check_button.png" alt="Check Button">
+      <img id='reset' src="images/reset_button.png" alt="Check Button"> -->
+      <div id='check'>Check</div>
+      <div id='reset'>Reset Game</div>
     </div>
+
 
   </body>
 </html>
