@@ -1,6 +1,6 @@
 $(function(){
 
-var board = [
+board = [
   [0, 0, 4, 6, 0, 8, 9, 1, 2],
   [0, 7, 2, 0, 0, 0, 3, 4, 8],
   [1, 0, 0, 3, 4, 2, 5, 0, 7],
@@ -365,15 +365,28 @@ if (eb1===eb2 && eb2===eb3 && eb3===eb4 && eb4===eb5 && eb5===eb6 && eb6===eb7 &
 //////////////////////////////////END OF BUTTON, SET ALERT/////////////////////////////////
   if (allRows45 && allCols45 && allBoxes45) {
     alert('YOU WIN')
+    console.log($('#seconds').html());
+    sec = 0;
   } else {
     alert('SORRY, KEEP TRYING')
   }
 });
 
-////////////////////////////////////////GAME RESET//////////////////////////////////////////
+////////////////////////////////////////GAME AND TIMER RESET//////////////////////////////////////////
 $('#reset').click(function(){
   setBoard();
+  sec = 0;
 });
+
+////////////////////////////////////////TIMER//////////////////////////////////////////////
+
+  var sec = 0;
+  function pad ( val ) { return val > 9 ? val : "0" + val; }
+  setInterval( function(){
+      $("#seconds").html(pad(++sec%60));
+      $("#minutes").html(pad(parseInt(sec/60,10)));
+  }, 1000);
+
 
 
 
