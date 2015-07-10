@@ -7,6 +7,8 @@
     <!-- jquery using CDN -->
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+
     <!--jQuery UI -->
     <link rel="stylesheet" href="js/jquery-ui-1.11.4.custom/jquery-ui.min.css">
     <script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
@@ -18,9 +20,14 @@
     <title>Sudoku</title>
   </head>
   <body>
+
     <h1>Sudoku</h1>
-    <button id="check" type="button" name="button">CHECK</button>
-    <div>
+
+    <div id="timer">
+      <span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+
+    <div class="numbers">
       <div class='number' id='one'>1</div>
       <div class='number' id='two'>2</div>
       <div class='number' id='three'>3</div>
@@ -154,10 +161,12 @@
         <div class='square' title='7'></div>
         <div class='square' title='8'></div>
       </div>
-
     </div>
 
-
+    <div class="buttons">
+      <button id="check" type="button" name="button">CHECK</button>
+      <button id="reset" type="button" name="button">RESET</button>
+    </div>
 
   </body>
 </html>
