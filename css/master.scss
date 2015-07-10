@@ -1,50 +1,53 @@
 body {
-  width: 900px;
+  width: 800px;
   margin: 0 auto;
   font-family: 'Abel', sans-serif;
 }
 
 h1 {
+  // background-color: #58ACFA;
   color: red;
   font-size: 50px;
-  background-color: #58ACFA;
-  // text-align: center;
+}
+
+p {
+  font-size: 20px;
 }
 
 .numbers {
-  background-color: #2EFE64;
+  // background-color: #2EFE64;
   text-align: center;
   margin-bottom: 10px;
   .number {
     width: 60px;
     height: 60px;
-    border: 1px solid red;
+    border: 1px solid black;
+    background-color: red;
+    color: white;
     display: inline-block;
-    vertical-align: top;
     font-size: 30px;
     border-radius: 10px;
     padding: 5px;
     margin: 2px 0;
-    text-align: center;
-    background-color: blue;
+    line-height: 60px;
   }
 }
 
 .container {
-  width: 678px;
-  background-color: pink;
+  // background-color: pink;
   margin: 0 auto;
+  text-align: center;
   .square {
     width: 60px;
     height: 60px;
-    border: 1px solid red;
+    border: 1px solid black;
     display: inline-block;
     vertical-align: top;
     font-size: 30px;
     border-radius: 10px;
     padding: 5px;
     margin: 2px 0;
-    text-align: center;
+    line-height: 60px;
   }
 }
 
@@ -59,33 +62,32 @@ h1 {
 }
 
 .buttons {
-  width: 900px;
-  height: 100px;
-  background-color: purple;
+  // background-color: purple;
+  height: 130px;
   text-align: center;
-  position: absolute;
   div {
     width:300px;
     height:50px;
     background-color: #68BFEF;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     display: inline-block;
-    margin: 20px 10px;
+    margin: 20px 35px;
     border-radius: 10px;
+    border: 1px solid black;
+    padding-top: 15px;
   }
 }
 
 #check {
   background-color: white;
-  color: red;
+  color: green;
 }
 
 #reset {
   background-color: white;
   color: red;
 }
-
 
 .row1 div:nth-child(n+4):nth-child(-n+6) {
   background-color: #BDBDBD;
