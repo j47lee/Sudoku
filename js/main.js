@@ -48,7 +48,6 @@ function setBoard(){
         squares[squareNumber].innerHTML = boardReset[i][j];
       } else {
         squares[squareNumber].innerHTML = '';
-        console.log('Square is 0. Do not fill')
       }
     }
   }
@@ -364,11 +363,14 @@ if (eb1===eb2 && eb2===eb3 && eb3===eb4 && eb4===eb5 && eb5===eb6 && eb6===eb7 &
 
 //////////////////////////////////END OF BUTTON, SET ALERT/////////////////////////////////
   if (allRows45 && allCols45 && allBoxes45) {
-    alert('YOU WIN')
-    console.log($('#seconds').html());
+    alert('YOU WIN!!')
+    // $('#score').html($('#seconds').html()) ;
+    $('#scoreSec').html($('#seconds').html());
+    $('#scoreMin').html($('#minutes').html());
+
     sec = 0;
   } else {
-    alert('SORRY, KEEP TRYING')
+    alert('Sorry, Keep Trying')
   }
 });
 
@@ -379,16 +381,22 @@ $('#reset').click(function(){
 });
 
 ////////////////////////////////////////TIMER//////////////////////////////////////////////
-
-  var sec = 0;
-  function pad ( val ) { return val > 9 ? val : "0" + val; }
-  setInterval( function(){
-      $("#seconds").html(pad(++sec%60));
-      $("#minutes").html(pad(parseInt(sec/60,10)));
-  }, 1000);
-
+var sec = 0;
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+setInterval( function(){
+  $('#seconds').html(pad(++sec%60));
+  $('#minutes').html(pad(parseInt(sec/60,10)));
+}, 1000);
 
 
+
+$('#check').mouseover(function() {
+  $(this).animate({ backgroundColor: "black" }, 500); }).mouseout(function() {
+    $(this).animate({ backgroundColor: "#68BFEF" }, 200); })
+
+$('#reset').mouseover(function() {
+  $(this).animate({ backgroundColor: "black" }, 500); }).mouseout(function() {
+    $(this).animate({ backgroundColor: "#68BFEF" }, 200); })
 
 
 }) //end of jq
