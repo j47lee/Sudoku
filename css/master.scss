@@ -1,21 +1,39 @@
 body {
   width: 900px;
   margin: 0 auto;
+  font-family: 'Abel', sans-serif;
 }
 
 h1 {
   color: red;
+  font-size: 50px;
+  background-color: #58ACFA;
+  // text-align: center;
 }
 
-#check {
-  width: 150px;
-  height: 50px;
-  font-size: 30px;
+.numbers {
+  background-color: #2EFE64;
+  text-align: center;
+  margin-bottom: 10px;
+  .number {
+    width: 60px;
+    height: 60px;
+    border: 1px solid red;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px 0;
+    text-align: center;
+    background-color: blue;
+  }
 }
 
 .container {
-  width: 650px;
+  width: 678px;
   background-color: pink;
+  margin: 0 auto;
   .square {
     width: 60px;
     height: 60px;
@@ -23,13 +41,76 @@ h1 {
     display: inline-block;
     vertical-align: top;
     font-size: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px 0;
+    text-align: center;
   }
 }
 
-.number {
-  font-size: 30px;
-  width: 60px;
-  height: 60px;
-  background-color: red;
-  display: inline-block;
+#time_score {
+  float: right;
+  margin: 10px 0;
+  text-align: right;
+}
+
+#timer, #score {
+  font-size: 20px;
+}
+
+.buttons {
+  width: 900px;
+  height: 100px;
+  background-color: purple;
+  text-align: center;
+  position: absolute;
+  div {
+    width:300px;
+    height:50px;
+    background-color: #68BFEF;
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+    margin: 20px 10px;
+    border-radius: 10px;
+  }
+}
+
+#check {
+  background-color: white;
+  color: red;
+}
+
+#reset {
+  background-color: white;
+  color: red;
+}
+
+
+.row1 div:nth-child(n+4):nth-child(-n+6) {
+  background-color: #BDBDBD;
+}
+.row2 div:nth-child(n+4):nth-child(-n+6) {
+  background-color: #BDBDBD;
+}
+.row3 div:nth-child(n+4):nth-child(-n+6) {
+  background-color: #BDBDBD;
+}
+.row4 div:nth-child(-n+3), .row4 div:nth-child(n+7):nth-child(-n+9) {
+  background-color: #BDBDBD;
+}
+.row5 div:nth-child(-n+3), .row5 div:nth-child(n+7):nth-child(-n+9) {
+  background-color: #BDBDBD;
+}
+.row6 div:nth-child(-n+3), .row6 div:nth-child(n+7):nth-child(-n+9) {
+  background-color: #BDBDBD;
+}
+.row7 div:nth-child(n+4):nth-child(-n+6) {
+  background-color: #BDBDBD;
+}
+.row8 div:nth-child(n+4):nth-child(-n+6) {
+  background-color: #BDBDBD;
+}
+.row9 div:nth-child(n+4):nth-child(-n+6) {
+  background-color: #BDBDBD;
 }
