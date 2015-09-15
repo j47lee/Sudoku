@@ -4,8 +4,9 @@ My reproduction of the popular game Sudoku; a logic-based, combinatorial, number
 
 ### [Play Here!](http://j47lee.github.io/Sudoku/ "Sudoku")
 
-![Sudoku](sudoku_screenshot.png "Sudoku Screenshot")
+## Screenshot
 
+![Sudoku](sudoku_screenshot.png "Sudoku Screenshot")
 
 ##Technologies
 
